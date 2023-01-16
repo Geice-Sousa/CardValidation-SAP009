@@ -1,0 +1,127 @@
+/* principais cores que estou usando
+main{
+ color: #6E85B2;
+ color: #5C527F;
+ color: #3E2C41;
+ color: #261C2C;
+} */
+
+body {
+  background-image: linear-gradient(to right, #7a5e8a 0%, #261c2c 100%);
+  color: #6e85b2;
+  font-size: larger;
+  font-weight: bold;
+  font-style: italic;
+}
+
+h1, h2 {
+  color: #ffff;
+  margin-left: 5%;
+}
+
+main {
+  margin-bottom: 20px;
+}
+
+/* cartão de crédito */
+section {
+  background-color: #3e2c41;
+  color: #6e85b2;
+  border: 2px solid #261c2c;
+  border-radius: 15px;
+  width: 405px;
+  height: 220px;
+  margin: auto;
+  margin-top: 10%;
+  box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
+}
+
+/* informações de dentro do cartão */
+.container {
+  width: 90%;
+  display: block;
+  padding: 15px;
+}
+
+.card-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.titulo-cartao {
+  /* tentei colocar o first-child e não foi */
+  text-transform: uppercase;
+  font-size: x-large;
+  font-family: monospace;
+}
+.titulo-banco {
+  font-size: large;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.card-img {
+  display: flex;
+  justify-content: space-between;
+}
+img {
+  width: 8%;
+  margin: 0% 5% 5%;
+  border-radius: 5px;
+}
+
+/* formulário/ áreas de preenchimento */
+.card-infos {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-left: 20px;
+}
+.card-numero {
+  width: 190%;
+  align-items: center;
+}
+.card-nome {
+  width: 130%;
+
+}
+.card-validade {
+  width: 27%;
+ 
+  /* como tentar subir a data e deixar do lado do nome - display: inline-block; não pegou */
+}
+
+input {
+  /* display: block;
+ text-align: center;
+ align-items: center;
+ margin: auto; */
+  background-color: transparent;
+  color: #261C2C;
+}
+input:focus{
+  background-color: #f0f0f0;
+}
+label {
+  font-size: small;
+}
+#validarCartao {
+  margin: auto;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+/* rodapé */
+footer{
+  font-family: 'Courier New', Courier, monospace;
+  font-style: normal;
+  font-size: medium;
+  color: #f0f0f0;
+  text-align: center;
+}
+footer a{
+  text-decoration: none;
+  color: #f0f0f0;
+}
