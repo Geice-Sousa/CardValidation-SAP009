@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,200;0,300;0,400;1,200&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <header>
+      <h1>Seja bem-vinde!</h1>
+      <h2>Digite seus dados nos campos abaixo.</h2>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="card-titulo">
+            <h3 class="titulo-cartao">CardValidation</h3>
+            <h3 class="titulo-banco">BancoLAB
+              <span class="material-symbols-outlined">
+                airplanemode_active
+                </span>
+            </h3>
+          </div>
+
+          <div class="card-img">
+            <img src="chip1.jpg" alt="chip dourado">
+            <img src="lab.jpg" alt="selo">
+          </div>
+
+          <div class="infos">
+            <form class="card-infos">
+              <!-- mudar os types para os adequados -->
+                          
+                <input class="card-numero" type="text" inputmode="numeric" placeholder="0000.0000.0000.0000" pattern="^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$" minlength="16" maxlength="19" required data-numero>
+                <!-- pattern="0000.0000.0000.0000" 
+                -->
+
+                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required data-nome>
+                <!-- pegar o primeiro nome antes do espaço e colocar "fulano, seu cartão é..." -->
+
+                <input class="card-validade" type="month"  placeholder="00/00" minlength="4" maxlength="5" data-validade>
+                <!-- pattern="[0-9]{2}-[0-9]{4}"
+                ja coloquei type date, number, e consigo digitar a qntd de  -->
+              
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div>
+      mostrará o resultado da validação
+      <input type="submit" id="validarCartao" placeholder="Verifique se o cartão é válido" data-botao>
+      <!-- retirar o botão qndo aparecer o span -->
+      <span id="respostaValidacao" data-valida></span>
+    </div>
+
+    <footer>
+     <h5>Desenvolvido por <a href="https://github.com/Geice-Sousa">Geice Sousa Pinho</a>, 2023.</h5>
+    </footer>
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
