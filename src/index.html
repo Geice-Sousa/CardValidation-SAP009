@@ -18,7 +18,7 @@
       <h2>Digite seus dados nos campos abaixo.</h2>
     </header>
     <main>
-      <section>
+      <section class="cartaoDeCredito">
         <div class="container">
           <div class="card-titulo">
             <h3 class="titulo-cartao">CardValidation</h3>
@@ -36,18 +36,15 @@
 
           <div class="infos">
             <form class="card-infos">
-              <!-- mudar os types para os adequados -->
                           
-                <input class="card-numero" type="text" inputmode="numeric" placeholder="0000.0000.0000.0000" pattern="^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$" minlength="16" maxlength="19" required data-numero>
-                <!-- pattern="0000.0000.0000.0000" 
+                <input class="card-numero" type="text" inputmode="numeric" placeholder="0000.0000.0000.0000" required="required" minlength="16" maxlength="16" title="Digite apenas números, sem pontos"  pattern= "\d*" data-numero>
+                <!-- pattern="^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$" ou "[0-9]" 
                 -->
 
-                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required data-nome>
+                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required="required" data-nome>
                 <!-- pegar o primeiro nome antes do espaço e colocar "fulano, seu cartão é..." -->
 
-                <input class="card-validade" type="month"  placeholder="00/00" minlength="4" maxlength="5" data-validade>
-                <!-- pattern="[0-9]{2}-[0-9]{4}"
-                ja coloquei type date, number, e consigo digitar a qntd de  -->
+                <input class="card-validade" type="month" min="2023-01" max="2035-01" data-validade>
               
             </form>
           </div>
@@ -55,12 +52,16 @@
       </section>
     </main>
 
-    <div>
-      mostrará o resultado da validação
+    <section id="respostaValidacao">
+     
+      <span data-resposta></span>
+
       <input type="submit" id="validarCartao" placeholder="Verifique se o cartão é válido" data-botao>
-      <!-- retirar o botão qndo aparecer o span -->
-      <span id="respostaValidacao" data-valida></span>
-    </div>
+    </section>
+
+    <section class="tenteNovamente">
+      <p><a href="index.html" data-redigitar></p>
+    </section>
 
     <footer>
      <h5>Desenvolvido por <a href="https://github.com/Geice-Sousa">Geice Sousa Pinho</a>, 2023.</h5>

@@ -1,0 +1,15 @@
+OK - criar constantes com os inputs 
+OK - usar o .value para acessar o numero digitado 
+OK - criar um novo array com os numeros pares, multiplicar por 2 num for 
+OK - criar função que valide o numero do cartão (qtd - usei maxlength)
+OK - criar função que multiplique por 2 , usar o modulo % para criar a lógica e para pegar os numeros pares
+OK - retirar o botão qndo aparecer o span com
+OK - validade limitada
+
+// criar função que pegue o nome do cliente e coloque no span
+
+// const span = document.getElementById("respostaValidacao");
+// console.log(span);
+// span.creatElement("p");
+// remove(botaoSubmit);
+// span.value.innerHTML = nome.textContent = ", seu cartão:" // executa a função de validação

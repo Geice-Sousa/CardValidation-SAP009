@@ -2,97 +2,98 @@ import validator from "./validator.js";
 
 console.log(validator);
 
-// criar constantes com os inputs - ok
-// usar o .value para acessar o numero digitado - ok
-// criar função que valide o numero do cartão (qtd)
-// criar função que multiplique por 2 , usar o modulo % para criar a lógica e para pegar os numeros pares
-// criar função que pegue o nome do cliente e coloque no span
-
 const form = document.querySelector(".card-infos");
+
 const formulario = form.value;
+const validade = document.querySelector("[data-validade]").value;
 
 const nome = document.querySelector("[data-nome]").value;
 
-const validade = document.querySelector("[data-validade]").value;
+const respostaValidação = document.querySelector("[data-resposta]");
+
+const redigitar = document.querySelector("[data-redigitar]");
 
 const botaoSubmit = document.querySelector("[data-botao]");
 
+const numeroCartao = document.querySelector("[data-numero]").value;
+
+
+form.reportValidity(); //pede o preenchimento do 1ºfilho, criei uma const que tinha como valores nome, validade e numeroCartao e coloquei antes, mas não funcionou
+
+// FUNÇÃO PARA SO RECEBER NUMEROS
+
+//FIM
+
 const validarCartao = () => {
-  // colocar como paramentro do addEventListtener
   const numeroCartao = document.querySelector("[data-numero]").value;
 
   const numero = Array.from(numeroCartao);
-  let numeroInvertido = numero.reverse();
-  console.log(numeroInvertido);
-  console.log(numeroInvertido[1])
-    //+[3] +[5]+[7]+[9]+[11]+[13]+[15]);
 
+  const numeroInvertido = numero.reverse();
 
+  const numerosParaMultiplicar = new Array(
+    numeroInvertido[1],
+    numeroInvertido[3],
+    numeroInvertido[5],
+    numeroInvertido[7],
+    numeroInvertido[9],
+    numeroInvertido[11],
+    numeroInvertido[13],
+    numeroInvertido[15]
+  );
 
-    // criar um novo array com os numeros pares, multiplicar por 2 num for
-    // usar o some() para somar todos?
-    // USAR O REDUCE PARA SOMAR!
+  const numerosMultiplicados = numerosParaMultiplicar.map((numero) => {
+    const multiplicados = numero * 2;
 
+    if (multiplicados >= 10) {
+      const resultadoDaSomaDosMultiplicados =
+        parseInt(multiplicados.toString()[0]) +
+        parseInt(multiplicados.toString()[1]);
 
+      return resultadoDaSomaDosMultiplicados;
+    }
+    return multiplicados;
+  }); // console.log(numerosMultiplicados); //okay, aqui é a 1ªVAR eu poderia usar o concat para finalizar o calculo
 
+  const somaDaMultiplicacao = numerosMultiplicados.reduce(function (a, b) {
+    return parseInt(a) + parseInt(b);
+  }, 0); //no lugar de concatenar os arrays fiz a 1ªsoma
 
+  const numerosImparesParaSomar = new Array(
+    numeroInvertido[0],
+    numeroInvertido[2],
+    numeroInvertido[4],
+    numeroInvertido[6],
+    numeroInvertido[8],
+    numeroInvertido[10],
+    numeroInvertido[12],
+    numeroInvertido[14]
+  );
 
+  // console.log(numerosImparesParaSomar);
 
+  const numerosImparesSomados = numerosImparesParaSomar.reduce(function (a, b) {
+    const soma = parseInt(a) + parseInt(b);
+    return soma;
+  });
+  // console.log(numerosImparesSomados); //2ªsoma
 
+  const resultadoFinal = somaDaMultiplicacao + numerosImparesSomados;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // let i = 1;
-
-  // while(i >= numeroInvertido.length) {
-  //   numeroInvertido = i + 2;
-  //   i + 2;
-// .some()
-  // }
-  // console.log(i);
-  // console.log([i]);
-  // console.log(numeroInvertido[i])
-
-}
+  if (resultadoFinal % 2 === 0) {
+    respostaValidação.textContent = "Parabéns! Seu cartão é valido.";
+    botaoSubmit.remove();
+  } else {
+    respostaValidação.textContent = "Desculpe, mas seu cartão não é valido!";
+    botaoSubmit.remove();
+    redigitar.innerHTML = "<br>";
+    redigitar.textContent = "Tente novamente";
+    //tinha como colocar aqui o .reload() para recarregar a pag? coloquei no HMTL um a no tente novamente
+  }
+};
 
 botaoSubmit.addEventListener("click", validarCartao);
 
-//como pegar a posição par do array(elas são os numeros impares 1,3,5,7,9 pq o i começa no 0)?
-// somar todos o i pares e depois somar todos os impares ja x2
+// replace(/\D/g, " ")substitui o 1parametro pelo 2
 
-
-
-// ta errado pq oq eu quero é a posição de i 
-// dar um console pra cada item , não é i[1]
-//   if ( i[1] === i.value &&
-//     i[3] === i.value &&
-//     i[5] === i.value &&
-//     i[7] === i.value &&
-//     i[9] === i.value
-//   ) {
-//     i = i * 2;
-//     return [i]
-//   }
-
-
-
-// criar função que pegue o nome do cliente e coloque no span
-// const span = document.getElementById("respostaValidacao");
-// console.log(span);
-// span.creatElement("p");
-// retirar o botão qndo aparecer o span com:
-// remove(botaoSubmit);
-// span.value.innerHTML = nome.textContent = ", seu cartão:" // executa a função de validação
+// maskify() = para esconder os numeros
