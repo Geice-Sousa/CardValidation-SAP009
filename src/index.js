@@ -5,9 +5,12 @@ console.log(validator);
 const form = document.querySelector(".card-infos");
 
 const formulario = form.value;
-const validade = document.querySelector("[data-validade]").value;
 
-const nome = document.querySelector("[data-nome]").value;
+const val = document.querySelector("[data-validade]");
+const validade = val.value;
+
+const nome = document.querySelector("[data-nome]");
+const nomePreenchido = nome.value;
 
 const respostaValidação = document.querySelector("[data-resposta]");
 
@@ -15,19 +18,27 @@ const redigitar = document.querySelector("[data-redigitar]");
 
 const botaoSubmit = document.querySelector("[data-botao]");
 
-const numeroCartao = document.querySelector("[data-numero]").value;
+const dataNumero = document.querySelector("[data-numero]");
+const numeroCartao = dataNumero.value;
 
+// form.reportValidity(); //pede o preenchimento do 1ºfilho, criei uma const que tinha como valores nome, validade e numeroCartao e coloquei antes, mas não funcionou
 
-form.reportValidity(); //pede o preenchimento do 1ºfilho, criei uma const que tinha como valores nome, validade e numeroCartao e coloquei antes, mas não funcionou
+const preenchimentoCorretoDosCampos = () => {
+  if (dataNumero.validity.tooShort && nome.validity.tooShort) {
+    return validarCartao() //como executar a função validarcartao aqui?
+  } else {
+    alert("digite os campos corretamente");
+    window.location.reload();
+    return;
+  }
+};
+botaoSubmit.addEventListener("click", preenchimentoCorretoDosCampos)
 
-// FUNÇÃO PARA SO RECEBER NUMEROS
-
-//FIM
-
+//INÍCIO VALIDAÇÃO
 const validarCartao = () => {
-  const numeroCartao = document.querySelector("[data-numero]").value;
+  const numeroDoCartao = document.querySelector("[data-numero]").value;
 
-  const numero = Array.from(numeroCartao);
+  const numero = Array.from(numeroDoCartao);
 
   const numeroInvertido = numero.reverse();
 

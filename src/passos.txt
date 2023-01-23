@@ -13,3 +13,4 @@ OK - validade limitada
 // span.creatElement("p");
 // remove(botaoSubmit);
 // span.value.innerHTML = nome.textContent = ", seu cartão:" // executa a função de validação
+//colocar um cursor not-allowed no css para impedir de clicar caso esteja com espaço em branco add class list e criar no css
