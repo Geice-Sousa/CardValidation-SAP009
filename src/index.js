@@ -6,8 +6,8 @@ const form = document.querySelector(".card-infos");
 
 const formulario = form.value;
 
-const val = document.querySelector("[data-validade]");
-const validade = val.value;
+// const val = document.querySelector("[data-validade]");
+// const validade = val.value;
 
 const nome = document.querySelector("[data-nome]");
 const nomePreenchido = nome.value;
@@ -19,16 +19,26 @@ const redigitar = document.querySelector("[data-redigitar]");
 const botaoSubmit = document.querySelector("[data-botao]");
 
 const dataNumero = document.querySelector("[data-numero]");
-const numeroCartao = dataNumero.value;
+// const numeroCartao = dataNumero.value;
 
 // form.reportValidity(); //pede o preenchimento do 1ºfilho, criei uma const que tinha como valores nome, validade e numeroCartao e coloquei antes, mas não funcionou
 
 const preenchimentoDosCampos = () => {
-  if (numeroCartao === "" || nomePreenchido === "") {
-    console.log("Preencha todos os campos");
-    return
+  const numeroCartao = dataNumero.value;
+  const nomePreenchido = nome.value;
+
+
+  if(numeroCartao === "" && numeroCartao.length < 15){
+    respostaValidação.textContent = "Por favor, preencha o número do cartão corretamente!";
+    redigitar.innerHTML = "<br>";
+
   }
+  if(nomePreenchido === "" || nomePreenchido.length < 8) {
+    respostaValidação.textContent = "Por favor, preencha nome e sobrenome como está no cartão!";
+    redigitar.innerHTML = "<br>";
+  } 
 };
+
 botaoSubmit.addEventListener("click", preenchimentoDosCampos)
 
 //INÍCIO VALIDAÇÃO
@@ -84,13 +94,14 @@ const validarCartao = () => {
     const soma = parseInt(a) + parseInt(b);
     return soma;
   });
-  // console.log(numerosImparesSomados); //2ªsoma
+  // console.log(numerosImparesSomados); //2ªsoma  
 
   const resultadoFinal = somaDaMultiplicacao + numerosImparesSomados;
 
-  if (resultadoFinal % 2 === 0) {
+  if (resultadoFinal % 2 === 0 && numeroDoCartao.length === 16){
     respostaValidação.textContent = "Parabéns! Seu cartão é valido.";
     botaoSubmit.remove();
+    // && nomePreenchido.length >= 8 com essa condição não ta pegando
   } else {
     respostaValidação.textContent = "Desculpe, mas seu cartão não é valido!";
     botaoSubmit.remove();

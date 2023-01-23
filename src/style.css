@@ -103,6 +103,9 @@ input:focus{
   text-align: center;
   background-color: #261C2C;
 }
+.naoClica{
+  cursor: not-allowed;
+}
 
 /* resposta a validação */
 #respostaValidacao{
