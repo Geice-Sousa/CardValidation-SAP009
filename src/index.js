@@ -8,7 +8,7 @@ console.log(validator);
 
 const form = document.getElementsByClassName("card-infos");
 const formulario = form.value;
-console.log(formulario);
+// console.log(formulario);
 
 const numeroCartao = document.querySelector(".card-numero").value;
 console.log(numeroCartao);
