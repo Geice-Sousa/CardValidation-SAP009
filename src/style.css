@@ -1,17 +1,10 @@
-/* principais cores que estou usando
-main{
- color: #6E85B2;
- color: #5C527F;
- color: #3E2C41;
- color: #261C2C;
-} */
-
 body {
   background-image: linear-gradient(to right, #7a5e8a 0%, #261c2c 100%);
   color: #6e85b2;
   font-size: larger;
   font-weight: bold;
   font-style: italic;
+  font-family: 'Sofia Sans', sans-serif;
 }
 
 h1, h2 {
@@ -23,8 +16,8 @@ main {
   margin-bottom: 20px;
 }
 
-/* cartão de crédito */
-section {
+/* desenho do cartão */
+.cartaoDeCredito {
   background-color: #3e2c41;
   color: #6e85b2;
   border: 2px solid #261c2c;
@@ -32,7 +25,7 @@ section {
   width: 405px;
   height: 220px;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 8%;
   box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
 }
 
@@ -42,14 +35,12 @@ section {
   display: block;
   padding: 15px;
 }
-
 .card-titulo {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-.titulo-cartao {
-  /* tentei colocar o first-child e não foi */
+.titulo-cartao {  /* tentei colocar o first-child e não foi */
   text-transform: uppercase;
   font-size: x-large;
   font-family: monospace;
@@ -60,7 +51,6 @@ section {
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
-
 .card-img {
   display: flex;
   justify-content: space-between;
@@ -72,49 +62,80 @@ img {
 }
 
 /* formulário/ áreas de preenchimento */
+.card-infos:required{
+  color: blue;
+}
 .card-infos {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-left: 20px;
+  margin: auto;
+  margin-left: 3px;
+  text-align: center;
 }
 .card-numero {
-  width: 190%;
-  align-items: center;
+  width: 94%;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 2px;
+  margin: 5px 10px;
 }
 .card-nome {
-  width: 130%;
-
+  width: 55%;
+  margin: 5px;
+  text-align: center;
 }
 .card-validade {
-  width: 27%;
- 
-  /* como tentar subir a data e deixar do lado do nome - display: inline-block; não pegou */
+  width: 25%;
+  margin: 5px 5px;
+  text-align: center;
+  font-size: xx-small;
 }
-
 input {
-  /* display: block;
- text-align: center;
- align-items: center;
- margin: auto; */
   background-color: transparent;
-  color: #261C2C;
+  color: #E5BA73;  
 }
 input:focus{
-  background-color: #f0f0f0;
+  background-color: #261C2C;
 }
-label {
-  font-size: small;
-}
+
+/* botão enviar */
 #validarCartao {
   margin: auto;
   text-align: center;
-  background-color: #f0f0f0;
+  background-color: #261C2C;
 }
 
+.naoClica{
+  cursor: not-allowed;
+}
+
+/* resposta a validação */
+#respostaValidacao{
+  margin: auto;
+  margin-top: 25px;
+  color: #FFD56F;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: overline underline 5px;
+  text-justify:inter-word;
+}
+
+.tenteNovamente p{
+  text-align: center;
+  display: flex;
+}
+.tenteNovamente a {
+  margin: auto;
+  text-align: center;
+  font-size: small;
+  color: #FFD56F;
+  text-transform: lowercase;
+  text-decoration: none;
+
+}
 /* rodapé */
 footer{
+  margin-top: 7%;
+  vertical-align: text-bottom;
   font-family: 'Courier New', Courier, monospace;
   font-style: normal;
   font-size: medium;

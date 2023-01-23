@@ -8,21 +8,26 @@
   <link rel="stylesheet" href="style.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,200;0,300;0,400;1,200&display=swap" rel="stylesheet">
 </head>
   <body>
+
     <header>
       <h1>Seja bem-vinde!</h1>
       <h2>Digite seus dados nos campos abaixo.</h2>
     </header>
+
     <main>
-      <section>
+      <section class="cartaoDeCredito">
         <div class="container">
           <div class="card-titulo">
             <h3 class="titulo-cartao">CardValidation</h3>
             <h3 class="titulo-banco">BancoLAB
               <span class="material-symbols-outlined">
                 airplanemode_active
-                </span>
+              </span>
             </h3>
           </div>
 
@@ -33,29 +38,36 @@
 
           <div class="infos">
             <form class="card-infos">
-              <!-- mudar os types para os adequados -->
-              <!-- label e inputs são um par, nesse caso que não vou usar a label, preciso deixar mesmo assim?  -->
-              <label><input class="card-numero"type="text" pattern="0000.0000.0000.0000"></label>
+                <input class="card-numero" type="text" inputmode="numeric" placeholder="0000.0000.0000.0000" required="required" minlength="16" maxlength="16" title="Digite apenas números, sem pontos"  pattern= "\d*" data-numero>
+                <!-- pattern="^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$" ou "[0-9]" 
+                -->
 
-              <label><input class="card-nome" type="text" placeholder="Nome e Sobrenome"></label>
+                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required="required" data-nome>
+                <!-- pegar o primeiro nome antes do espaço e colocar "fulano, seu cartão é..." -->
 
-              <label><input class="card-validade" type="text" pattern="00/00" placeholder="00/00"></label> 
+                <input class="card-validade" type="month" min="2023-01" max="2035-01" data-validade>
             </form>
           </div>
         </div>
       </section>
     </main>
 
-    <div>
-      mostrará o resultado da validação
-      <input type="submit" id="validarCartao" onclick="validaCartao()" placeholder="Verifique se o cartão é válido" data-botao>
-      <!-- retirar o botão qndo aparecer o span -->
-      <span id="respostaValidacao" data-valida></span>
-    </div>
+    <section id="respostaValidacao">
+      <span data-resposta></span>
 
+      <input type="submit" id="validarCartao" placeholder="Verifique se o cartão é válido" data-botao>
+    </section>
+
+    <div class="tenteNovamente">
+      <p><a href="index.html" data-redigitar></p>
+    </div>
+    
     <footer>
-     <h5>Desenvolvido por <a href="https://github.com/Geice-Sousa">Geice Sousa Pinho</a>, 2023.</h5>
+      <h5>Desenvolvido por 
+        <a href="https://github.com/Geice-Sousa">Geice Sousa Pinho</a>, 2023.
+      </h5>
     </footer>
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
