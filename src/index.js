@@ -23,16 +23,13 @@ const numeroCartao = dataNumero.value;
 
 // form.reportValidity(); //pede o preenchimento do 1ºfilho, criei uma const que tinha como valores nome, validade e numeroCartao e coloquei antes, mas não funcionou
 
-const preenchimentoCorretoDosCampos = () => {
-  if (dataNumero.validity.tooShort && nome.validity.tooShort) {
-    return validarCartao() //como executar a função validarcartao aqui?
-  } else {
-    alert("digite os campos corretamente");
-    window.location.reload();
-    return;
+const preenchimentoDosCampos = () => {
+  if (numeroCartao === "" || nomePreenchido === "") {
+    console.log("Preencha todos os campos");
+    return
   }
 };
-botaoSubmit.addEventListener("click", preenchimentoCorretoDosCampos)
+botaoSubmit.addEventListener("click", preenchimentoDosCampos)
 
 //INÍCIO VALIDAÇÃO
 const validarCartao = () => {
