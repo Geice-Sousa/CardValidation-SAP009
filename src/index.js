@@ -34,9 +34,7 @@ const validarCartao = () => {
 
   const numeroInvertido = numero.reverse();
 
-  const numerosParaMultiplicar = new Array(numeroInvertido[1], numeroInvertido[3],
-    numeroInvertido[5], numeroInvertido[7], numeroInvertido[9], numeroInvertido[11],
-    numeroInvertido[13], numeroInvertido[15]);
+  const numerosParaMultiplicar = new Array(numeroInvertido[1], numeroInvertido[3], numeroInvertido[5], numeroInvertido[7], numeroInvertido[9], numeroInvertido[11], numeroInvertido[13], numeroInvertido[15]);
 
   const numerosMultiplicados = numerosParaMultiplicar.map((numero) => {
     const multiplicados = numero * 2;
@@ -55,9 +53,7 @@ const validarCartao = () => {
     return parseInt(a) + parseInt(b);
   }, 0); //no lugar de concatenar os arrays fiz a 1ªsoma
 
-  const numerosImparesParaSomar = new Array(numeroInvertido[0], numeroInvertido[2],
-    numeroInvertido[4], numeroInvertido[6], numeroInvertido[8], numeroInvertido[10],
-    numeroInvertido[12], numeroInvertido[14]); // console.log(numerosImparesParaSomar);
+  const numerosImparesParaSomar = new Array(numeroInvertido[0], numeroInvertido[2], numeroInvertido[4], numeroInvertido[6], numeroInvertido[8], numeroInvertido[10], numeroInvertido[12], numeroInvertido[14]); // console.log(numerosImparesParaSomar);
 
   const numerosImparesSomados = numerosImparesParaSomar.reduce(function (a, b) {
     const soma = parseInt(a) + parseInt(b);
