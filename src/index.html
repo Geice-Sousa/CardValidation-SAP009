@@ -38,12 +38,11 @@
 
           <div class="infos">
             <form class="card-infos">
-                <input class="card-numero" type="text" inputmode="numeric" placeholder="0000.0000.0000.0000" required="required" minlength="16" maxlength="16" title="Digite apenas números, sem pontos"  pattern= "\d*" data-numero>
-                <!-- pattern="^([0-9]{4})([0-9]{4})([0-9]{4})([0-9]{4})$" ou "[0-9]" 
-                -->
+                <input class="card-numero" type="text" placeholder="0000.0000.0000.0000" required="required" minlength="16" maxlength="16" title="Digite apenas números, sem pontos" onkeypress="return event.charCode >= 48 && event.charCode <= 57" data-numero>
+                <!-- (OK) pattern e inputmode="numeric" não funcionaram -->
 
-                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required="required" data-nome>
-                <!-- pegar o primeiro nome antes do espaço e colocar "fulano, seu cartão é..." -->
+                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required="required" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 120 || event.charCode === 32" data-nome>
+                <!-- (DETALHE) pegar o primeiro nome antes do espaço e colocar "fulano, seu cartão é..." -->
 
                 <input class="card-validade" type="month" min="2023-01" max="2035-01" data-validade>
             </form>
