@@ -96,6 +96,7 @@ botaoSubmit.addEventListener("click", validarCartao);
 //   mascaraNumeros();
 //   validarCartao();
 // });
+botaoSubmit.addEventListener("click", mascaraNumeros);
 
 function mascaraNumeros() {
   const numeros = dataNumero.value;
@@ -103,4 +104,5 @@ function mascaraNumeros() {
   const simboloMascara = "#"
   const numeroMascarado = simboloMascara.repeat(12) + ultimosDigitos
   // ou "############" + ultimosDigitos ou ultimosDigitos.padStart(16, "#")
+  return numeroMascarado
 }
