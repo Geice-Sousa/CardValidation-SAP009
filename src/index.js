@@ -80,11 +80,17 @@ const validarCartao = () => {
   if (resultadoFinal % 2 === 0) {
     respostaValidação.textContent = "Parabéns! Seu cartão é valido.";
     botaoSubmit.remove();
+    // numeroDoCartao.mascaraNumeros(); 
+    console.log(mascaraNumeros())
+
   } else {
     respostaValidação.textContent = "Desculpe, mas seu cartão não é valido!";
     botaoSubmit.remove();
     redigitar.innerHTML = "<br>";
     redigitar.textContent = "Tente novamente";
+    // numeroDoCartao.innerHTML.mascaraNumeros();
+    console.log(mascaraNumeros())
+
   }
 };
 
@@ -96,6 +102,7 @@ function mascaraNumeros() {
   // ou "############" + ultimosDigitos ou ultimosDigitos.padStart(16, "#")
   return numeroMascarado;
 }
+
 // botaoSubmit.addEventListener("click", campoEmBranco);
 // O QUE EU QUERO: SE TIVER ALGUM INPUT EM BRANCO: EXECUTA ESSA FUNÇÃO NÃO EXECUTA A DE BAIXO, tá executando validarCartão logo depois de clicar no ok do alert
 // botaoSubmit.addEventListener("click", validarCartao);
@@ -103,15 +110,12 @@ function mascaraNumeros() {
 
 botaoSubmit.addEventListener("click", (event) => {
   event.preventDefault();
-  if (nome.value === "" || dataNumero.value === "" 
-      || nome.value.length <= 8 || dataNumero.value.length < 16) {
+  if (nome.value === "" || dataNumero.value === "" || nome.value.length <= 8 || dataNumero.value.length < 16) {
     campoEmBranco();
-    
-  }else if (campoEmBranco()){
-    validarCartao();
-  } 
-  else if (validarCartao()){
+  } else if (campoEmBranco()) {
     mascaraNumeros();
-  } 
-
+  } else if (mascaraNumeros()) {
+    validarCartao();
+  }
+  //validarCartao();  
 });
