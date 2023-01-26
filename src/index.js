@@ -88,21 +88,30 @@ const validarCartao = () => {
   }
 };
 
-botaoSubmit.addEventListener("click", campoEmBranco);
-// O QUE EU QUERO: SE TIVER ALGUM INPUT EM BRANCO: EXECUTA ESSA FUNÇÃO NÃO EXECUTA A DE BAIXO, tá executando validarCartão logo depois de clicar no ok do alert
-botaoSubmit.addEventListener("click", validarCartao);
-// botaoSubmit.addEventListener("click", () => {
-//   campoEmBranco();
-//   mascaraNumeros();
-//   validarCartao();
-// });
-botaoSubmit.addEventListener("click", mascaraNumeros);
-
 function mascaraNumeros() {
   const numeros = dataNumero.value;
-  const ultimosDigitos  = numeros.slice(-4);
-  const simboloMascara = "#"
-  const numeroMascarado = simboloMascara.repeat(12) + ultimosDigitos
+  const ultimosDigitos = numeros.slice(-4);
+  const simboloMascara = "#";
+  const numeroMascarado = simboloMascara.repeat(12) + ultimosDigitos;
   // ou "############" + ultimosDigitos ou ultimosDigitos.padStart(16, "#")
-  return numeroMascarado
+  return numeroMascarado;
 }
+// botaoSubmit.addEventListener("click", campoEmBranco);
+// O QUE EU QUERO: SE TIVER ALGUM INPUT EM BRANCO: EXECUTA ESSA FUNÇÃO NÃO EXECUTA A DE BAIXO, tá executando validarCartão logo depois de clicar no ok do alert
+// botaoSubmit.addEventListener("click", validarCartao);
+// botaoSubmit.addEventListener("click", mascaraNumeros);
+
+botaoSubmit.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (nome.value === "" || dataNumero.value === "" 
+      || nome.value.length <= 8 || dataNumero.value.length < 16) {
+    campoEmBranco();
+    
+  }else if (campoEmBranco()){
+    validarCartao();
+  } 
+  else if (validarCartao()){
+    mascaraNumeros();
+  } 
+
+});
