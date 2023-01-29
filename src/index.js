@@ -1,7 +1,7 @@
 import validator from "./validator.js";
 console.log(validator);
 
-const form = document.querySelector(".card-infos");
+// const form = document.querySelector(".card-infos");
 const botaoSubmit = document.querySelector("[data-botao]");
 const dataNumero = document.querySelector("[data-numero]");
 const nome = document.querySelector("[data-nome]");
