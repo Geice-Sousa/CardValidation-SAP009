@@ -1,0 +1,30 @@
+body {
+  background-image: linear-gradient(to right, #7a5e8a 0%, #261c2c 100%);
+  color: #6e85b2;
+  font-size: larger;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'Sofia Sans', sans-serif;
+}
+
+h1, h2 {
+  color: #ffff;
+  margin-left: 5%;
+}
+
+main {
+  margin-bottom: 20px;
+}
+
+/* desenho do cartão */
+.cartaoDeCredito {
+  background-color: #3e2c41;
+  color: #6e85b2;
+  border: 2px solid #261c2c;
+  border-radius: 15px;
+  width: 405px;
+  height: 220px;
+  margin: auto;
+  margin-top: 8%;
+  box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
+}

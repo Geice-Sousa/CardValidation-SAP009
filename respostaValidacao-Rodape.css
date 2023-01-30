@@ -1,0 +1,41 @@
+/* resposta a validação */
+#respostaValidacao{
+ margin: auto;
+ margin-top: 25px;
+ color: #FFD56F;
+ text-align: center;
+ text-transform: uppercase;
+ text-decoration: overline underline 5px;
+ text-justify:inter-word;
+ }
+
+.invisivel{
+ color: transparent;
+}
+
+.tenteNovamente p{
+ text-align: center;
+ display: flex;
+}
+.tenteNovamente a {
+ margin: auto;
+ text-align: center;
+ font-size: small;
+ color: #FFD56F;
+ text-transform: lowercase;
+ text-decoration: none;
+}
+/* rodapé */
+footer{
+ margin-top: 7%;
+ vertical-align: text-bottom;
+ font-family: 'Courier New', Courier, monospace;
+ font-style: normal;
+ font-size: medium;
+ color: #f0f0f0;
+ text-align: center;
+}
+footer a{
+ text-decoration: none;
+ color: #f0f0f0;
+}

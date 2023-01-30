@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="dentroDoCartao.css"/>
+  <link rel="stylesheet" href="respostaValidacao-Rodape.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@0,200;0,300;0,400;1,200&display=swap" rel="stylesheet">
+</head>
+  <body>
+
+    <header>
+      <h1>Seja bem-vinde!</h1>
+      <h2>Digite seus dados nos campos abaixo.</h2>
+    </header>
+
+    <main>
+      <section class="cartaoDeCredito">
+        <div class="container">
+          <div class="card-titulo">
+            <h3 class="titulo-cartao">CardValidation</h3>
+            <h3 class="titulo-banco">BancoLAB
+              <span class="material-symbols-outlined">
+                airplanemode_active
+              </span>
+            </h3>
+          </div>
+
+          <div class="card-img">
+            <img src="chip1.jpg" alt="chip dourado">
+            <img src="lab.jpg" alt="selo">
+          </div>
+
+          <div class="infos">
+            <form class="card-infos">
+                <input class="card-numero" type="text" placeholder="0000.0000.0000.0000" required="required" minlength="16" maxlength="16" title="Digite apenas números, sem pontos" onkeypress="return event.charCode >= 48 && event.charCode <= 57" data-numero>
+                <!-- (OK) pattern e inputmode="numeric" não funcionaram -->
+
+                <input class="card-nome" type="text" placeholder="Nome e Sobrenome" required="required" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 120 || event.charCode === 32" data-nome>
+                <!-- (DETALHE) pegar o primeiro nome antes do espaço e colocar "fulano, seu cartão é..." -->
+
+                <input class="card-validade" type="month" min="2023-01" max="2035-01" data-validade>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section id="respostaValidacao">
+      <span data-resposta></span>
+      <p class="respostaCartaoMascarado"></p>
+
+      <input type="submit" id="validarCartao" placeholder="Verifique se o cartão é válido" data-botao>
+    </section>
+
+    <div class="tenteNovamente">
+      <p><a href="index.html" data-redigitar></a></p>
+    </div>
+    
+    <footer>
+      <h5>Desenvolvido por 
+        <a href="https://github.com/Geice-Sousa">Geice Sousa Pinho</a>, 2023.
+      </h5>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>

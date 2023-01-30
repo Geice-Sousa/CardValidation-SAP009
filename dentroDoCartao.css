@@ -1,0 +1,78 @@
+/* informações de dentro do cartão */
+.container {
+ width: 90%;
+ display: block;
+ padding: 15px;
+}
+.card-titulo {
+ display: flex;
+ justify-content: space-between;
+ align-items: baseline;
+}
+.titulo-cartao {  /* tentei colocar o first-child e não foi */
+ text-transform: uppercase;
+ font-size: x-large;
+ font-family: monospace;
+}
+.titulo-banco {
+ font-size: large;
+}
+.material-symbols-outlined {
+ font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.card-img {
+ display: flex;
+ justify-content: space-between;
+}
+img {
+ width: 8%;
+ margin: 0% 5% 5%;
+ border-radius: 5px;
+}
+
+/* formulário/ áreas de preenchimento */
+.card-infos:required{
+ color: blue;
+}
+.card-infos {
+ width: 100%;
+ margin: auto;
+ margin-left: 3px;
+ text-align: center;
+}
+.card-numero {
+ width: 94%;
+ display: inline-block;
+ text-align: center;
+ letter-spacing: 2px;
+ margin: 5px 10px;
+}
+.card-nome {
+ width: 55%;
+ margin: 5px;
+ text-align: center;
+}
+.card-validade {
+ width: 25%;
+ margin: 5px 5px;
+ text-align: center;
+ font-size: xx-small;
+}
+input {
+ background-color: transparent;
+ color: #E5BA73;  
+}
+input:focus{
+ background-color: #261C2C;
+}
+
+/* botão enviar */
+#validarCartao {
+ margin: auto;
+ text-align: center;
+ background-color: #261C2C;
+}
+
+.naoClica{
+ cursor: not-allowed;
+}
