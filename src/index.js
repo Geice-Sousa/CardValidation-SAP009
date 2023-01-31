@@ -21,13 +21,15 @@ botaoSubmit.addEventListener("click", (event) => {
       respostaValidação.textContent = `Parabéns, ${nome.value}! 
       Seu cartão de número ${validator.maskify(dataNumero.value)} é valido!`;
       botaoSubmit.remove();
-      // nome.value.classList.add("invisivel") // REMOVERO INPUT
-      // dataNumero.value.remove()// REMOVERO INPUT
+      nome.value = " "
+      dataNumero.value = ""
+
     } else {
       respostaValidação.textContent = `Desculpe, ${nome.value}!
       Seu cartão de número ${validator.maskify(dataNumero.value)} não é valido!`; 
       botaoSubmit.remove();
-      // REMOVER Os INPUTs
+      nome.value=""
+      dataNumero.value = ""
       redigitar.innerHTML = "<br>";
       redigitar.textContent = "Tente novamente";
     }
