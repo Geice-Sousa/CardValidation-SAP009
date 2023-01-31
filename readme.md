@@ -18,6 +18,15 @@
 - 📆 A validade é opcional;
 <h5>
 
+<br>
+
+<h4> Para fazer o projeto rodar localmente, você vai fazer:  </h4>
+
+- 1º um fork no GitHub
+- 2º um clone para sua máquina [`git clone`]
+- 3º acessar o projeto e fazer as instalações [`npm install`]
+- 4º rodar o projeto [`npm start`] 
+
 
 <h4> 👩🏾‍💻 Tecnologias usadas para desenvolver o projeto </h4>
 

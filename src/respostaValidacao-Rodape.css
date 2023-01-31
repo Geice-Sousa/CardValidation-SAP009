@@ -7,6 +7,10 @@
  text-transform: uppercase;
  text-decoration: overline underline 5px;
  text-justify:inter-word;
+ }
+
+.invisivel{
+ color: transparent;
 }
 
 .tenteNovamente p{
