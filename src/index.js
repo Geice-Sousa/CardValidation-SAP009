@@ -5,7 +5,6 @@ const botaoSubmit = document.querySelector("[data-botao]");
 const dataNumero = document.querySelector("[data-numero]");
 const nome = document.querySelector("[data-nome]");
 const respostaValidação = document.querySelector("[data-resposta]");
-// const respostaNumeroMascarado = document.querySelector(".respostaCartaoMascarado");
 const redigitar = document.querySelector("[data-redigitar]");
 
 botaoSubmit.addEventListener("click", (event) => {
@@ -21,14 +20,14 @@ botaoSubmit.addEventListener("click", (event) => {
       respostaValidação.textContent = `Parabéns, ${nome.value}! 
       Seu cartão de número ${validator.maskify(dataNumero.value)} é valido!`;
       botaoSubmit.remove();
-      nome.value = " "
+      nome.value = ""
       dataNumero.value = ""
 
     } else {
-      respostaValidação.textContent = `Desculpe, ${nome.value}!
+      respostaValidação.textContent = `Desculpe, ${nome.value}! 
       Seu cartão de número ${validator.maskify(dataNumero.value)} não é valido!`; 
       botaoSubmit.remove();
-      nome.value=""
+      nome.value = ""
       dataNumero.value = ""
       redigitar.innerHTML = "<br>";
       redigitar.textContent = "Tente novamente";
