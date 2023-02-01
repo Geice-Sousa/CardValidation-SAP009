@@ -35,4 +35,6 @@
 - JavaScript
 - Git e GitHub
 
+##### 💳🎯💼 [Clique para acessar este projeto](https://geice-sousa.github.io/CardValidation-SAP009/)
+
 ##### 👩🏾‍💼🎯💼 [Clique para acessar todos o meus repositórios](https://github.com/Geice-Sousa?tab=repositories)
