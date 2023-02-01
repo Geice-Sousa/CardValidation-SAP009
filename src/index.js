@@ -9,7 +9,7 @@ const redigitar = document.querySelector("[data-redigitar]");
 
 botaoSubmit.addEventListener("click", (event) => {
   event.preventDefault();
-  if (nome.value === "" || (nome.value.length < 8 || dataNumero.value === "") || dataNumero.value.length < 16) {
+  if (nome.value === "" || (nome.value.length < 8 || dataNumero.value === "") || dataNumero.value.length < 10) {
     
     form.reportValidity();
     validator.campoEmBranco(dataNumero.value, nome.value);
