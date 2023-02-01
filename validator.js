@@ -1,18 +1,14 @@
 const validator = {
   campoEmBranco: (numeroCartao, nomePreenchido) => {
-    // const form = document.querySelector(".card-infos"); form.reportValidity();
-  // DETALHE QUE QUERO COLOCAR NO INDEX MAS NÃO SEI COMO o input fica marcado
-
     if (numeroCartao.length < 16 || numeroCartao === "") {
       alert("Por favor, preencha corretamente a numeração do seu cartão!");
     } else if (nomePreenchido.length <= 8 || nomePreenchido === "") {
       alert("Por favor, preencha o campo nome e sobrenome como está no cartão!");
     }
-    //FUNCIONOU! o reportValidity faz o blur, de deixar o input não preenchido selecionado, o alert deixa continuar a preencher sem precisar digitar tudo novamente
   },
 
-  validarCartao: (numeroDoCartao) => {
-    const numero = Array.from(numeroDoCartao);
+  isValid: (creditCardNumber) => {
+    const numero = Array.from(creditCardNumber);
 
     const numeroInvertido = numero.reverse();
 
@@ -64,10 +60,16 @@ const validator = {
     return resultadoFinal % 10 === 0;
   }, // vai retornar true or false
 
-  mascaraNumeros: (numeros) => {
+  maskify: (numeros) => {
+
+    if (numeros.length <= 4){
+      return numeros
+    }
+
     const ultimosDigitos = numeros.slice(-4);
     const simboloMascara = "#";
-    const numeroMascarado = simboloMascara.repeat(12) + ultimosDigitos;
+    const qtdCaracteres = numeros.length - 4;
+    const numeroMascarado = simboloMascara.repeat(qtdCaracteres) + ultimosDigitos;
     // ou "############" + ultimosDigitos ou ultimosDigitos.padStart(16, "#")
     return numeroMascarado;
   },
