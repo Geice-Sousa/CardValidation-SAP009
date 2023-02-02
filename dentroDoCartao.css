@@ -72,6 +72,9 @@ input:focus{
  text-align: center;
  background-color: #261C2C;
 }
+#validarCartao:hover{
+ cursor: pointer;
+}
 
 .naoClica{
  cursor: not-allowed;

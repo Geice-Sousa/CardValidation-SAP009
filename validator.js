@@ -1,6 +1,6 @@
 const validator = {
   campoEmBranco: (numeroCartao, nomePreenchido) => {
-    if (numeroCartao.length < 16 || numeroCartao === "") {
+    if (numeroCartao.length < 10 || numeroCartao === "") {
       alert("Por favor, preencha corretamente a numeração do seu cartão!");
     } else if (nomePreenchido.length <= 8 || nomePreenchido === "") {
       alert("Por favor, preencha o campo nome e sobrenome como está no cartão!");
