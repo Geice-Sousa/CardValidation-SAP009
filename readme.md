@@ -38,3 +38,9 @@
 ##### 💳🎯💼 [Clique para acessar este projeto](https://geice-sousa.github.io/CardValidation-SAP009/)
 
 ##### 👩🏾‍💼🎯💼 [Clique para acessar todos o meus repositórios](https://github.com/Geice-Sousa?tab=repositories)
+
+</br>
+
+<h4>🎨🖌️🖼️ Este foi o desenho que criei como protótipo do site </h4>
+<img width= "400px" src= "https://user-images.githubusercontent.com/109318160/222906680-b8049566-0424-4c4e-a5c8-f9b54ce16f76.png">
+
